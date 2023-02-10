@@ -85,22 +85,22 @@ prediction_prices = scaler.inverse_transform(prediction_prices)
 # exit()
 # plot
 
-plt.plot([float(x) for x in actual_prices], color="black", label="Actual Prices")
-plt.plot(prediction_prices[:,0], color="red", label="Predicted Prices")
-plt.title(f"{coin} price prediction!")
-plt.xlabel("Time")
-plt.ylabel("Price")
-plt.legend(loc="upper left")
-plt.show()
+# plt.plot([float(x) for x in actual_prices], color="black", label="Actual Prices")
+# plt.plot(prediction_prices[:,0], color="red", label="Predicted Prices")
+# plt.title(f"{coin} price prediction!")
+# plt.xlabel("Time")
+# plt.ylabel("Price")
+# plt.legend(loc="upper left")
+# plt.show()
 
 
-# real_data = [model_inputs[len(model_inputs) + 2 - prediction_days:len(model_inputs)+2, 0]]
-# real_data = np.array(real_data)
-# real_data = np.reshape(real_data, (real_data.shape[0], real_data.shape[1], 1))
+real_data = [model_inputs[len(model_inputs) + 1 - prediction_days:len(model_inputs)+1, 0]]
+real_data = np.array(real_data)
+real_data = np.reshape(real_data, (real_data.shape[0], real_data.shape[1], 1))
 
-# prediction = model.predict(real_data)
-# prediction = scaler.inverse_transform(prediction)
+prediction = model.predict(real_data)
+prediction = scaler.inverse_transform(prediction)
 
-# print(prediction)
+print(prediction)
 
 
